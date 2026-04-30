@@ -1,0 +1,25 @@
+# =============================================================================
+# 必须使用 Python 3.9+（推荐 3.11）。不要用系统 python3 / python3.6 直接 pip install：
+#   numpy==1.26.4、torch>=2 等在此环境下不存在或无法安装。
+# 正确做法（在 backend 目录）：
+#   bash setup_venv.sh
+# 或手动： python3.11 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+# =============================================================================
+# python-dotenv：1.x 在部分国内镜像不可用；0.19+ 与 load_dotenv 用法一致
+python-dotenv>=0.19.0
+flask>=2.0.0
+flask-cors>=4.0.0
+requests>=2.25.0
+pymysql>=1.0.0
+websocket-client>=1.0.0
+numpy==1.26.4
+opencv-python-headless>=4.8.0
+torch>=2.0.0
+facenet-pytorch>=2.5.3
+emotiefflib>=0.1.0
+# 情绪推理优先走 ONNX，比同模型 PyTorch 路径更省内存，减轻低配机 OOM（Killed）
+onnx>=1.14.0
+onnxruntime>=1.15.0
+pypdf>=4.2.0
+python-docx>=1.1.2
+python-pptx>=0.6.23

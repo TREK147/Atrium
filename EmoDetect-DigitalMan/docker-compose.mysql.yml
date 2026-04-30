@@ -1,0 +1,28 @@
+# 可选：用 Docker 在本机跑 MySQL 8，不污染系统包
+# 用法（在 EmoDetect-DigitalMan 目录）：
+#   docker compose -f docker-compose.mysql.yml up -d
+# .env 中设置：
+#   MYSQL_HOST=127.0.0.1
+#   MYSQL_PORT=3307
+#   MYSQL_USER=emo_app
+#   MYSQL_PASSWORD=请改为强密码
+#   MYSQL_DATABASE=emo_system
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: emo_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass_change_me}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-emo_system}
+      MYSQL_USER: ${MYSQL_USER:-emo_app}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-emo_pass_change_me}
+    ports:
+      - "3307:3306"
+    volumes:
+      - emo_mysql_data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+volumes:
+  emo_mysql_data: {}

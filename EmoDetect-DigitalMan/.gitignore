@@ -1,0 +1,43 @@
+# --- 后端相关 (Python/Flask) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+backend/.venv/
+env/
+instance/
+.pytest_cache/
+backend/logs/
+*.log
+
+# --- 前端相关 (Node/Vite/React) ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vscode/*
+!.vscode/extensions.json
+.eslintcache
+.stylelintcache
+
+# --- 业务上传数据 (极其重要) ---
+uploads/
+static/uploads/
+temp/
+
+# --- 系统与编辑器相关 ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.bak
+
+# --- 数据库临时文件 ---
+*.sqlite
+*.db
+
+# EmotiEffLib：不纳入仓库，使用 pip install emotiefflib + 运行时下载模型到 ~/.emotiefflib
+EmotiEffLib/

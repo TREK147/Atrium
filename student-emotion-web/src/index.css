@@ -1,0 +1,18 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  padding: 16px;
+}
